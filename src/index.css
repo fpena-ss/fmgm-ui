@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-fmgm-primary: #0f8f27;
+  --color-fmgm-secondary: #3ab7bf;
+  --color-fmgm-tertiary: #78dcca;
+}
