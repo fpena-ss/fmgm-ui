@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHeaderMenu } from "../services/header.service";
+import { getHeaderMenu } from "@api/services/header.service";
 
 export const useHeaderQuery = () => {
     return useQuery({

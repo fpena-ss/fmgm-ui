@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAboutUs } from "../services/about-us.service";
+import { getAboutUs } from "@api/services/about-us.service";
 
 export const useAboutUsQuery = () => {
     return useQuery({

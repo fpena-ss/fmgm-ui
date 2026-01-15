@@ -1,24 +1,21 @@
-import { useHomeQuery } from "../../../api/queries/home.query";
-import type { Home as HomeType } from "../../../interfaces/home";
-import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
-
+import { useHomeQuery } from "@api/queries/home.query";
+import type { Home as HomeType } from "@interfaces/home";
+import { Loading } from "@shared/components/Loading";
+import { ErrorMessage } from "@shared/components/ErrorMessage";
+import { DynamicZone } from "@shared/components/sections";
 
 export const Home = () => {
     const { data, isLoading, error } = useHomeQuery();
     const home: HomeType['data'] = data?.data;
     
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (isLoading) return <Loading />;
+    if (error) return <ErrorMessage message={error.message} />;
 
-  return (
-    <div className="w-full flex flex-col items-center justify-center py-10">
-        <div className="w-full max-w-7xl flex flex-col items-center justify-center">
-            <h1 className="text-4xl font-bold">{home?.title}</h1>
-            <img src={`${import.meta.env.VITE_API_URL}${home?.logo?.url}`} alt={home?.title} />
-            <div className="prose prose-lg">
-                <BlocksRenderer content={home?.body as unknown as BlocksContent} />
+    return (
+        <section className="w-full">
+            <div className="max-w-7xl mx-auto px-6">
+                {home?.Body && <DynamicZone components={home.Body} />}
             </div>
-        </div>
-    </div>
-  )
+        </section>
+    );
 }
