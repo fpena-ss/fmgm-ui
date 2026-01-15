@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { buildApiUrl } from '@api/helpers/preview';
 
 export const getFooter = async () => {
     const query = qs.stringify({
@@ -32,6 +33,6 @@ export const getFooter = async () => {
         },
     }, { encodeValuesOnly: true });
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/footer?${query}`);
+    const response = await fetch(buildApiUrl('/api/footer', query));
     return response.json();
 }

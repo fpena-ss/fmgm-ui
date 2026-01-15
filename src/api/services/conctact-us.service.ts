@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { buildApiUrl } from '@api/helpers/preview';
 
 export const getContactUs = async () => {
     const query = qs.stringify({
@@ -16,6 +17,6 @@ export const getContactUs = async () => {
         },
     }, { encodeValuesOnly: true });
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact-us?${query}`);
+    const response = await fetch(buildApiUrl('/api/contact-us', query));
     return response.json();
 }
