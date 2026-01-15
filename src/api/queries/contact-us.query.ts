@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getContactUs } from "../services/conctact-us.service";
+import { getContactUs } from "@api/services/conctact-us.service";
 
 export const useContactUsQuery = () => {
     return useQuery({

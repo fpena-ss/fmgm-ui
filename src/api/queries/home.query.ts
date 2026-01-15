@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHome } from "../services/home.service";
+import { getHome } from "@api/services/home.service";
 
 export const useHomeQuery = () => {
     return useQuery({

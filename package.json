@@ -10,11 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@strapi/blocks-react-renderer": "^1.0.2",
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-query": "^5.90.8",
     "@tanstack/react-router": "^1.136.0",
     "@tanstack/react-router-devtools": "^1.136.0",
+    "@types/qs": "^6.14.0",
+    "qs": "^6.14.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.17",

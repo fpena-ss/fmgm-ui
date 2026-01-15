@@ -1,4 +1,21 @@
+import qs from 'qs';
+
 export const getHeaderMenu = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/header-menu?populate[logo][fields][0]=url&populate=links`);
+    const query = qs.stringify({
+        populate: {
+            logo: {
+                fields: ['url'],
+            },
+            links: {
+                populate: {
+                    icon: {
+                        fields: ['url'],
+                    },
+                },
+            },
+        },
+    }, { encodeValuesOnly: true });
+
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/header-menu?${query}`);
     return response.json();
 }

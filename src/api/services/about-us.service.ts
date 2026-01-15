@@ -1,4 +1,14 @@
+import qs from 'qs';
+
 export const getAboutUs = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about-us?populate[images][fields][0]=url`);
+    const query = qs.stringify({
+        populate: {
+            images: {
+                fields: ['url'],
+            },
+        },
+    }, { encodeValuesOnly: true });
+
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about-us?${query}`);
     return response.json();
 }
