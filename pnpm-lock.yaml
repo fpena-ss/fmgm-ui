@@ -41,9 +41,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.17
         version: 4.1.17
-      typography:
-        specifier: link:}@tailwindcss/typography
-        version: link:}@tailwindcss/typography
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
