@@ -1,10 +1,24 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme {
+/* 
+ * Colores del tema - valores por defecto
+ * Estos valores se sobrescriben dinámicamente por ThemeProvider
+ * cuando los colores se cargan desde la API
+ */
+:root {
   --color-fmgm-blue: #002432;
   --color-fmgm-green: #377964;
   --color-fmgm-lime: #E1E049;
+  --color-fmgm-background: #FFFFFF;
+}
+
+@theme {
+  /* Referencia a las CSS custom properties dinámicas */
+  --color-fmgm-blue: var(--color-fmgm-blue);
+  --color-fmgm-green: var(--color-fmgm-green);
+  --color-fmgm-lime: var(--color-fmgm-lime);
+  --color-fmgm-background: var(--color-fmgm-background);
   --font-sans: 'Poppins', system-ui, sans-serif;
 }
 

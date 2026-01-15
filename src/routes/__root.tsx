@@ -8,7 +8,7 @@ import { WorkInProgress } from '@shared/components/WorkInProgress'
 const RootLayout = () => (
   <>
     <ProvidersLayer>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-fmgm-background">
         <Header />
         <main className="flex-1">
           <Outlet />
