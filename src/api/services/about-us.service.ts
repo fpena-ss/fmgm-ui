@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { buildApiUrl } from '@api/helpers/preview';
 
 export const getAboutUs = async () => {
     const query = qs.stringify({
@@ -9,6 +10,6 @@ export const getAboutUs = async () => {
         },
     }, { encodeValuesOnly: true });
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about-us?${query}`);
+    const response = await fetch(buildApiUrl('/api/about-us', query));
     return response.json();
 }

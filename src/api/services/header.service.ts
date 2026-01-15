@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { buildApiUrl } from '@api/helpers/preview';
 
 export const getHeaderMenu = async () => {
     const query = qs.stringify({
@@ -16,6 +17,6 @@ export const getHeaderMenu = async () => {
         },
     }, { encodeValuesOnly: true });
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/header-menu?${query}`);
+    const response = await fetch(buildApiUrl('/api/header-menu', query));
     return response.json();
 }
